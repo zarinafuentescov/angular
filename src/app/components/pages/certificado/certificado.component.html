@@ -1,0 +1,22 @@
+<p>certificado works!</p>
+
+<div class="contenedor">
+    <form [formGroup]="form" (ngSubmit)="consultar()" #certForm="ngForm">
+        <mat-form-field>
+            <input matInput placeholder="Rut Empresa" required formControlName="rut">
+        </mat-form-field>-
+        <mat-form-field>
+            <input matInput placeholder="Dv Empresa" required formControlName="dv">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ultimo Mes Cotizado" required formControlName="ultimaCotizacion">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="certForm.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    </form>
+</div>
+
+<div *ngIf="rut!=null;">
+    <br> La empresa RUT: {{rut}}-{{dv}} de nombre {{razonSocial}}, ha pagado la cotizacion del mes {{ultimaCotizacion}}</div>

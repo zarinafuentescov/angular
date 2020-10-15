@@ -1,0 +1,21 @@
+<p>sucursal works!</p>
+
+<div class="example-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="idSucursal">
+            <mat-header-cell *matHeaderCellDef> Id Sucursal </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.idSucursal}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="glosaSucursal">
+            <mat-header-cell *matHeaderCellDef> Glosa Sucursal </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.glosaSucursal}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="region">
+            <mat-header-cell *matHeaderCellDef> Region Sucursal </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.region.nombre}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+<ng-template #espera>Esperando datos</ng-template>

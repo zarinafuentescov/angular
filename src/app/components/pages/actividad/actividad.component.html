@@ -1,0 +1,21 @@
+<p>actividad works!</p>
+
+<div class="example-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="idActividad">
+            <mat-header-cell *matHeaderCellDef> Id Actividad </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.idActividad}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="codigoActividad">
+            <mat-header-cell *matHeaderCellDef> Codigo Actividad </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.codigoActividad}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="glosaActividad">
+            <mat-header-cell *matHeaderCellDef> Glosa Actividad</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.glosaActividad}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+<ng-template #espera>Esperando datos</ng-template>

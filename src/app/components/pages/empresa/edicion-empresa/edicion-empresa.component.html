@@ -1,0 +1,57 @@
+<p>edicion-empresa works!</p>
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #empForm="ngForm">
+    <div class="example-container">
+        <div [hidden]="true">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="ID" required formControlName="id">
+            </mat-form-field>
+        </div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Razon Social" required formControlName="razonSocial">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Direccion" required formControlName="direccion">
+        </mat-form-field>
+        <br>
+        <!--  <mat-form-field class="example-full-width">
+            <input matInput placeholder="Comuna" required formControlName="comuna">
+        </mat-form-field>
+        <br>-->
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Rut" required formControlName="rut">
+        </mat-form-field>-
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="DV" required formControlName="dv">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <mat-select formControlName="comuna" placeholder="Comuna" [(value)]="idComunaSeleccionado">
+                <mat-option *ngFor="let c of comuna" [value]="c.idComuna">
+                    {{c.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <mat-select formControlName="actividad" placeholder="Actividad" [(value)]="idActividadSeleccionado">
+                <mat-option *ngFor="let c of actividad" [value]="c.idActividad">
+                    {{c.glosaActividad}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Fecha Registro" type="date" required formControlName="fechaRegistro">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="empForm.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+        <button mat-raised-button color="accent" routerLink='/empresa' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+    </div>
+</form>

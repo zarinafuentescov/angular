@@ -1,0 +1,43 @@
+<p>registrar-usuario works!</p>
+
+<form class="contenedor" [formGroup]="form" (ngSubmit)="submit()" #usForm="ngForm">
+    <!--   <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field>
+    </div>-->
+    <div class="example-container">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nombre Usuario" required formControlName="username">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="contraseña" required formControlName="password">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email Usuario" required formControlName="userEmail">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Usuario Activado" required formControlName="userActivo">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+            <mat-select formControlName="tipoUsuario" placeholder="Tipo Usuario" [(value)]="idTipoUsuarioSeleccionado">
+                <mat-option *ngFor="let p of tipoUsuario" [value]="p.idTipoUsuario">
+                    {{p.glosaTipousuario}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="usForm.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+        <!--        <button mat-raised-button color="accent" routerLink='usuarios' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>-->
+    </div>
+</form>

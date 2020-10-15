@@ -1,0 +1,21 @@
+<p>comunas works!</p>
+
+<div class="example-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="idComuna">
+            <mat-header-cell *matHeaderCellDef> Id Comuna </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.idComuna}} </mat-cell>
+        </ng-container>
+        <!--       <ng-container matColumnDef="Region">
+            <mat-header-cell *matHeaderCellDef> ID Region </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.region}} </mat-cell>
+        </ng-container>-->
+        <ng-container matColumnDef="Nombre">
+            <mat-header-cell *matHeaderCellDef> Nombre Comuna </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.nombre}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+<ng-template #espera>Esperando datos</ng-template>

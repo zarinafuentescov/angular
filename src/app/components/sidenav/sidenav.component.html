@@ -1,0 +1,45 @@
+<div class="example-container">
+    <mat-toolbar>
+        <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+      </button>
+        <span>Certificado</span>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #sidenav style="width: 200px">
+            <!--     <button mat-menu-item (click)="sidenav.toggle()" routerLink="/empresa" style="cursor: pointer">
+        <span>Registrar Empresa</span>
+    </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/certificado" style="cursor: pointer">
+            <span>Certificado</span>
+        </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/usuarios" style="cursor: pointer">
+            <span>Usuarios</span>
+        </button>
+            <mat-divider></mat-divider>
+        -->
+            <mat-nav-list>
+
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/empresa"> Empresa </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/certificado"> Generar Certificado </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/usuarios"> Usuarios </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/region"> Region </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/sucursal"> Sucursales </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/comunas"> Comunas </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/actividad"> Actividad Economica </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/registroemp"> Registrar Empresas </a>
+                <a mat-list-item (click)="sidenav.toggle()" routerLink="/registrousu"> Registrar Usuarios </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
